@@ -1,10 +1,14 @@
 from .items import CompanyItem
 
 
-def extract_company_details(response):
-    company_brn = response.xpath(
-        "/html/body/table/tbody/tr[3]/td/table/tbody/tr/td/table[2]/tbody/tr/td/div/table/tbody/tr[5]/td/table/tbody/tr[2]/td[1]/text()").get()
-    company_name = response.xpath(
-        "/html/body/table/tbody/tr[3]/td/table/tbody/tr/td/table[2]/tbody/tr/td/div/table/tbody/tr[5]/td/table/tbody/tr[2]/td[2]/text()").get()
+def extract_company_details(response, given_brn):
+    try:
+        company_brn = ''.join(response.xpath(
+            "//td")[25].xpath(".//text()").getall()).strip()
+        company_name = ''.join(response.xpath(
+            "//td")[26].xpath(".//text()").getall()).strip()
+    except:
+        company_brn = None
+        company_name = None
 
-    return CompanyItem(company_name=company_name, company_brn=company_brn)
+    return CompanyItem(company_name=company_name, company_brn=company_brn, given_number=given_brn)
