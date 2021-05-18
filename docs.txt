@@ -1,0 +1,6 @@
+1. create a new folder async-ssm
+2. set local python version -- pyenv local 3.9.4
+3. initiate env like virtualenv with potry -- potry init
+4. example cmd to run python script inside dir -- poetry run python --version
+5. add dependencies to project -- poetry add requests
+6. set env variable in .env file

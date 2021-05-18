@@ -1,0 +1,427 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script type="31728ce4859e8d8301ee5659-text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"f57229c36f",applicationID:"15632419"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(7),c=e(8),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(9);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e){return!(!e||!e.protocol||"file:"===e.protocol)}t.exports=r},{}],4:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(6),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,w=["click","keydown","mousedown","pointerdown","touchstart"];w.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],5:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],6:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],7:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],8:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],9:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?u(e,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){e&&a&&e(n,r,i);for(var c=t(i),f=v(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[h[n]];return p&&p.push([b,n,r,c]),c}}function o(e,t){y[e]=v(e).concat(t)}function m(e,t){var n=y[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return y[e]||[]}function g(e){return p[e]=p[e]||i(n)}function w(e,t){s(e,function(e,n){t=t||"feature",h[n]=t,t in d||(d[t]=[])})}var y={},h={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:w,abort:c,aborted:!1};return b}function o(e){return u(e,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=e("gos"),s=e(7),d={},p={},l=t.exports=i();t.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=x.info=NREUM.info,t=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+x.offset],null,"api"),c("timing",["load",n]);var r=l.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===l.readyState&&o()}function o(){c("mark",["domContent",a()+x.offset],null,"api")}var a=e(2),c=e("handle"),f=e(7),u=e("ee"),s=e(5),d=e(3),p=window,l=p.document,m="addEventListener",v="attachEvent",g=p.XMLHttpRequest,w=g&&g.prototype;if(d(p.location)){NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:g,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1208.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:b,userAgent:s};e(1),e(4),l[m]?(l[m]("DOMContentLoaded",o,!1),p[m]("load",r,!1)):(l[v]("onreadystatechange",i),p[v]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0}},{}],"wrap-function":[function(e,t,n){function r(e,t){function n(t,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],e)}c(n+"start",[o,a,f],s,u);try{return p=t.apply(a,o)}catch(m){throw c(n+"err",[o,a,m],s,u),m}finally{c(n+"end",[o,a,p],s,u)}}return a(t)?t:(n||(n=""),nrWrapper[p]=t,o(t,nrWrapper,e),nrWrapper)}function r(e,t,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<t.length;u++)f=t[u],c=e[f],a(c)||(e[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!m||t){var c=m;m=!0;try{e.emit(n,r,o,t,a)}catch(f){i([f,n,r,o],e)}m=c}}return e||(e=s),n.inPlace=r,n.flag=p,n}function i(e,t){t||(t=s);try{t.emit("internal-error",e)}catch(n){}}function o(e,t,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(e);return r.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(o){i([o],n)}for(var a in e)l.call(e,a)&&(t[a]=e[a]);return t}function a(e){return!(e&&e instanceof Function&&e.apply&&!e[p])}function c(e,t){var n=t(e);return n[p]=e,o(e,n,s),n}function f(e,t,n){var r=e[t];e[t]=c(r,n)}function u(){for(var e=arguments.length,t=new Array(e),n=0;n<e;++n)t[n]=arguments[n];return t}var s=e("ee"),d=e(8),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;t.exports=r,t.exports.wrapFunction=c,t.exports.wrapInPlace=f,t.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<title>SSM e-Info</title>
+<meta name="Description" content="SSM e-Info Services is an Internet based service to provide search and purchase of registered company (ROC) and business (ROB) information online. This is an alternative to over the counter transactions. Everybody can access this service with Internet connection using online payment such as Prepaid, Credit Card (Visa, Mastercard, AMEX).">
+<meta name="Keywords" content="ssmeinfo, ssm, suruhanjaya, syarikat, perniagaan, malaysia, online, company, business, profile, financial, comparison, history, credit, rating, bank, government, kerajaan, negara, kpdnkk, perdagangan">
+<style type="text/css">
+@import url(/include/style/style.css);
+</style>
+<link rel="icon" href="https://www.ssm-einfo.my/images/faviconeinfo.ico" />
+<link rel="shortcut icon" href="https://www.ssm-einfo.my/images/faviconeinfo.ico" />
+
+<script data-cfasync="false" type="text/javascript" src="/include/scripts/jquery-1.12.1.min.js"></script>
+
+<link rel="stylesheet" href="/include/style/bootstrap.min.css">
+
+<link rel="stylesheet" href="/include/style/bootstrap-theme.min.css">
+
+<link rel="stylesheet" href="/include/style/bootstrap-table.min.css">
+
+<script src="/include/js/bootstrap-table.min.js" type="31728ce4859e8d8301ee5659-text/javascript"></script>
+
+<script src="/include/js/bootstrap.min.js" type="31728ce4859e8d8301ee5659-text/javascript"></script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1547673-17" type="31728ce4859e8d8301ee5659-text/javascript"></script>
+<script type="31728ce4859e8d8301ee5659-text/javascript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1547673-17');
+</script>
+<style type="text/css">
+a:link:after, a:visited:after {  
+  content: normal !important;  
+}
+@media print {
+  a[href]:after {
+    content: "";
+  }
+}
+.logoutBtn{
+	background-color: red !important;
+    color: white !important;
+    height: 25px !important;
+    font-size: 14px;
+    font-weight: bold;
+    width: 120px !important;
+    border: 0px !important;
+    border-radius: 7px;
+}
+.currBal{
+	color: #000 !important;
+	text-decoration: underline;
+}
+.currBal:hover{
+	color: #000 !important;
+}
+</style>
+</head>
+<body>
+<table cellpadding="0" cellspacing="2" border="0" width="984" align="center" bgcolor="#FFFFFF">
+<tr>
+<td bgcolor="#FFFFFF" class="topLogo">
+<div style="width: 100% !important; float: left;">
+<div style="width:50% !important; float: left;">
+<img src="/images/top_logo.png" width="300" border="0">
+</div>
+<div style="width:50% !important; float: left; text-align: right; padding-top: 25px;color: #03b8ec !important; font-size: 21px !important; font-weight: bold !important;">
+Get Your SSM Documents!
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td bgcolor="#f6eb60" align="center">
+<div class="menu">
+<ul>
+<li class="mainMenu" style="padding-right: 35px;">
+<a href="/index.php" title="Home" style="width: 100px !important;">Home</a>
+</li>
+<li class="mainMenu" style="padding-right: 35px;">
+<a href="/page.php">About Us</a>
+</li>
+<li class="mainMenu" style="padding-right: 15px;">
+<a href="/page.php?ac=news">News</a>
+</li>
+<li class="mainMenu" style="padding-right: 55px;">
+<a href="#">Our Products</a>
+<ul class="menuAlign">
+<li>
+<a class="drop" href="#" title="Company Profiles">Company Profile (ROC)</a>
+<ul class="right">
+<li><a href="/page/4" title="Product Overview">Product Overview</a></li>
+<li><a href="/sample/Company_Profile.pdf" title="Sample" target="_blank">Sample</a></li>
+</ul>
+</li>
+<li>
+<a class="drop" href="#" title="Business Profiles">Business Profile (ROB)</a>
+<ul class="right">
+<li><a href="/page/8" title="Product Overview">Product Overview</a></li>
+<li><a href="/sample/Business_Profile.pdf" title="Sample" target="_blank">Sample</a></li>
+</ul>
+</li>
+<li>
+<a class="drop" href="#" title="Scanned Form Images">Scanned Form Images</a>
+<ul class="right">
+<li><a href="/page/9" title="Product Overview">Product Overview</a></li>
+<li><a href="/sample/Scanned_Form_Images.pdf" title="Sample" target="_blank">Sample</a></li>
+</ul>
+</li>
+<li>
+<a class="drop" href="#" title="Company Charges">Company Charges</a>
+<ul class="right">
+<li><a href="/page/3" title="View Profile">Product Overview</a></li>
+<li><a href="/sample/Company_Charges.pdf" title="Sample" target="_blank">Sample</a></li>
+</ul>
+</li>
+<li>
+<a class="drop" href="#" title="Financial Comparison">Financial Comparison</a>
+<ul class="right">
+<li><a href="/page/6" title="Product Overview">Product Overview</a></li>
+<li><a href="/sample/Financial_Comparison_2Y.pdf" title="Sample" target="_blank">Sample (2Years)</a></li>
+<li><a href="/sample/Financial_Comparison_3Y.pdf" title="Sample" target="_blank">Sample(3Years)</a></li>
+<li><a href="/sample/Financial_Comparison_5Y.pdf" title="Sample" target="_blank">Sample(5Years)</a></li>
+<li><a href="/sample/Financial_Comparison_10Y.pdf" title="Sample" target="_blank">Sample(10Years)</a></li>
+</ul>
+</li>
+<li>
+<a class="drop" href="#" title="Certificate of Incorporation/ Registration">Certificate of Incorporation/ Registration</a>
+<ul class="right">
+<li>
+<a class="drop" href="#" title="Certificate of Incorporation of Private Company">Certificate of Incorporation of Private Company</a>
+<ul class="right">
+<li>
+<a href="/sample/Certificate_of_Incorporation_of_Private_Company.pdf" title="Sample" target="_blank">Sample</a>
+</li>
+</ul>
+</li>
+<li>
+<a class="drop" href="#" title="Certificate of Incorporation of Public Company">Certificate of Incorporation of Public Company</a>
+<ul class="right">
+<li>
+<a href="/sample/Certificate_of_Incorporation_of_Public_Company.pdf" title="Sample" target="_blank">Sample</a>
+</li>
+</ul>
+</li>
+<li>
+<a class="drop" href="#" title="Certificate of Incorporation of Foreign Company">Certificate of Incorporation of Foreign Company</a>
+<ul class="right">
+<li>
+<a href="/sample/Certificate_of_Incorporation_of_Foreign_Company.pdf" title="Sample" target="_blank">Sample</a>
+</li>
+</ul>
+</li>
+<li>
+<a class="drop" href="#" title="Certificate of Incorporation on Change of Name of Company">Certificate of Incorporation on Change of Name of Company</a>
+<ul class="right">
+<li>
+<a href="/sample/Certificate_of_Incorporation_on_Change_of_Name_of_Company.pdf" title="Sample" target="_blank">Sample</a>
+</li>
+</ul>
+</li>
+<li>
+<a class="drop" href="#" title="Certificate of Company Conversion">Certificate of Company Conversion</a>
+<ul class="right">
+<li>
+<a href="/sample/Certificate_of_Company_Conversion.pdf" title="Sample" target="_blank">Sample</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a class="drop" href="#" title="Business Termination Letter">Business Expiry Confirmation Letter</a>
+<ul class="right">
+<li><a href="/page/12" title="Product Overview">Product Overview</a></li>
+<li><a href="/sample/Business_Termination_Letter.pdf" title="Sample" target="_blank">Sample</a></li>
+</ul>
+</li>
+<li>
+<a class="drop" href="#" title="Attestation Of Company Good Standing">Attestation Of Company Good Standing (ACGS)</a>
+<ul class="right">
+<li><a href="/page/46" title="Product Overview">Product Overview</a></li>
+<li><a href="/sample/ACGS.pdf" title="Sample" target="_blank">Sample</a></li>
+</ul>
+</li>
+<li>
+<a href="#" title="Particulars">Particulars</a>
+<ul class="right">
+<li><a href="/sample/Particular_of_Director.pdf" title="Sample" target="_blank">Particulars of Director/Officer</a></li>
+<li><a href="/sample/Particular_of_ShareHolder.pdf" title="Sample" target="_blank">Particulars of Shareholders</a></li>
+<li><a href="/sample/Particular_of_ShareCapital.pdf" title="Sample" target="_blank">Particulars of Share Capital</a></li>
+<li><a href="/sample/Particular_of_Registered_Address.pdf" title="Sample" target="_blank">Particulars of Registered Address</a></li>
+</ul>
+</li>
+<li>
+<a href="/index.php?id=pricing" title="Product Pricing">Product Pricing</a>
+</li>
+<li>
+<a href="/products.php" title="Sample Documents">Sample Documents</a>
+</li>
+</ul>
+</li>
+<li class="mainMenu" style="padding-right: 75px;">
+<a href="#">Knowledgebase</a>
+<ul class="menuAlign">
+<li><a href="https://www.ssm.com.my/Pages/Legal_Framework/Companies-Act-2016.aspx" target="_blank" title="Companies Act 2016">Companies Act 2016</a></li>
+<li><a href="/page/11" title="FAQ">FAQ</a></li>
+<li>
+<a class="drop" href="#" title="DCTC">DCTC</a>
+<ul class="right">
+<li><a href="https://www.ssm-einfo.my/docs/FAQ_DCTC.pdf" title="FAQ" target="_blank">FAQ</a></li>
+<li><a href="https://www.ssm-einfo.my/docs/PANDUAN_PENGGUNA_SSM_DCTC_READER_DAN_CHECKER.pdf" title="FAQ DCTC" target="_blank">User Guide</a></li>
+</ul>
+</li>
+<li><a href="/page/10" title="Privacy Statement">Privacy Statement</a></li>
+<li><a href="/page.php?ac=usermanual" title="Online User Manual">Online User Manual</a></li>
+<li><a href="/page.php?ac=otc" title="Counter Location">Counter Location</a></li>
+<li><a href="/term.htm" title="Term of Services" target="_blank">Term of Services</a></li>
+</ul>
+</li>
+<li class="mainMenu">
+<a href="/index.php?id=feedback">Help Center</a>
+</li>
+</ul>
+</div> </td>
+</tr>
+<tr>
+<td>
+<table cellpadding="0" cellspacing="2" border="0" width="100%" height="100%">
+<tr>
+<td width="100%" valign="top">
+<table align="center" width="100%">
+<tr align="center" valign="top">
+<td>
+<style type="text/css">
+.loginForm td{
+  font-size: 14px !important;
+  padding-top: 10px !important;
+}
+.loginBtn{
+  background-color: #92c143 !important;
+    color: white !important;
+    height: 35px !important;
+    font-size: 16px;
+    font-weight: bold;
+    width: 230px;
+    border: 0px !important;
+}
+</style>
+<script Language="JavaScript" type="31728ce4859e8d8301ee5659-text/javascript">
+<!--
+function Form1_Validator(theForm)
+{
+
+var alertsay = ""; // define for long lines
+// alertsay is not necessary for your code,
+// but I need to break my lines in multiple lines
+// so the code won't extend off the edge of the page
+
+// START : USERNAME
+//check for username
+if (theForm.username.value == "")
+{
+alert("Enter your username.");
+theForm.username.focus();
+return (false);
+}
+// END : USERNAME
+
+// START : PASSWORD
+// require at least 5 characters in the password field
+if (theForm.password.value == "")
+{
+alert("Enter your password.");
+theForm.password.focus();
+return (false);
+}
+// END : PASSWORD
+
+if (theForm.image.value == "")
+{
+//echo "Image Verification does not match<br /> ";
+alert("Enter Image verification code.");
+theForm.image.focus();
+return (false);
+}
+
+// because this is a sample page, don't allow to exit to the post action
+// comes in handy when you are testing the form validations and don't
+// wish to exit the page
+//alert("Thank you for register. Your Form will be process.");
+//return(true);
+// replace the above with return(true); if you have a valid form to submit to
+}
+
+//-->
+
+function showProgress() { 
+	document.getElementById("progress").style.visibility = 'visible'; 
+	document.getElementById("submit").disabled = true;
+
+	document.getelementbyid("einfov2").submit; 
+	return true; 
+	}
+</script>
+<form name="einfov2" action="index.php?id=proceedLogin" id="loginForm" method="post" autocomplete="off" onsubmit="if (!window.__cfRLUnblockHandlers) return false; return Form1_Validator(this)" data-cf-modified-31728ce4859e8d8301ee5659-="">
+<table width="600" border="0" cellspacing="0" cellpadding="3" class="loginForm">
+<input type="hidden" name="returnURL" value="" />
+<tr>
+<td colspan="3">&nbsp;</td>
+</tr>
+<tr>
+<td width="39%" align="right" valign="top"><b>Username </b></td>
+<td width="7%" valign="top">:</td>
+<td width="54%" align="left" valign="top">
+<input type="text" name="username" maxlength="12" style="width: 230px;">
+&nbsp;</div></td>
+</tr>
+<tr>
+<td height="26" align="right" valign="top"><b>Password</b></td>
+<td valign="top">:</td>
+<td align="left" valign="top">
+<input type="password" name="password" size="32" maxlength="32" style="width: 230px;">
+</div></td>
+</tr>
+<tr>
+<td height="26" valign="top" align="right"><b>Image Verification</b><br />
+Enter word verification in the box below</td>
+<td valign="top">:</td>
+<td valign="top" align="left"><img src="randomImage.php?time=30303" /> <br />
+<br />
+<input name="image" type="text" id="image" value="" style="width: 230px;" /> <br />*Case Sensitive
+<input type="hidden" name="csrf_token" value="MTYyMTMwNDc0MmNWNENlSEhlcFRUOWVtcDdKM0R6Qm5BOUhmRGNoeEhw"></td>
+</tr>
+<tr>
+<td height="37" valign="top">&nbsp;</td>
+<td valign="top">&nbsp;</td>
+<td align="left" valign="top">
+<button type="submit" name="submit" class="loginBtn" style="margin-bottom: 5px;">Log In</button><br>
+<a onclick="if (!window.__cfRLUnblockHandlers) return false; formReset()" data-cf-modified-31728ce4859e8d8301ee5659-="">Reset</a> or
+<a href="index.php?id=forgot">Forgot Password</a>
+</td>
+</tr>
+</table>
+</form>
+
+<br><br>
+</td>
+</tr>
+</table>
+</td>
+<td valign="top">
+<table cellpadding="5" cellspacing="0" border="0" width="200">
+<tr>
+<td valign="top">
+<br>
+<table cellpadding="5" cellspacing="0" border="0" width="100%">
+<tr>
+<td>
+<div class="sideTitle" style="padding-top: 0px !important;">
+Follow Us
+</div>
+<div class="sideLinks">
+<a href="https://www.facebook.com/ssmeinfo/" target="_blank" class="sideFirst">
+<img src="/images/facebook.png" width="30">
+</a>
+<a href="https://www.instagram.com/ssmeinfo/" target="_blank">
+<img src="/images/instagram.png" width="30">
+</a>
+</div>
+<div class="sideTitle2">
+@ssmeinfo
+</div>
+</td>
+</tr>
+</table> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<script type="31728ce4859e8d8301ee5659-text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"f57229c36f","applicationID":"15632419","transactionName":"NFFSYkdZWkNRBRZZXQ0bZURcF11eVAMaHkILRA==","queueTime":0,"applicationTime":35,"atts":"GBZRFA9DSU0=","errorBeacon":"bam.nr-data.net","agent":""}</script><script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="31728ce4859e8d8301ee5659-|49" defer=""></script></body>
+</html>
+<script Language="JavaScript" type="31728ce4859e8d8301ee5659-text/javascript">
+var alertsay = ""; // define for long lines
+// alertsay is not necessary for your code,
+// but I need to break my lines in multiple lines
+// so the code won't extend off the edge of the page
+// START : PASSWORD
+// require at least 5 characters in the password field
+var error = "2";
+if (error == "1")
+{
+alert("Please make sure your USERNAME and PASSWORD are NOT EMPTY!!!");
+}
+if (error == "2")
+{
+alert("You are required to login as e-Account member before proceeding.");
+}
+if (error == "3")
+{
+alert("You can login now!");
+}
+if (error == "4")
+{
+alert("Your new password has been sent to your e-mail. You may now login with your new password.");
+}
+if (error == "5")
+{
+alert("Your USERNAME is INVALID.");
+}
+if (error == "6")
+{
+alert("Your PASSWORD is INVALID.");
+}
+if (error == "7")
+{
+alert("Incorrect verification code.");
+}
+// END : PASSWORD
+</script>
